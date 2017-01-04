@@ -1,14 +1,9 @@
 <%@ page import="java.io.*,java.util.*,java.text.*,icare.appointment.data.*" %>
 <%
-	if(request.getParameter("name") != "") {
-		//	do nothing
-	} else {
-		String name = (String)session.getAttribute("sessUname");
-		if(name == null)  {
-			response.sendRedirect("iCare.jsp");
-		}
+	String name = (String)session.getAttribute("sessUname");
+	if(name == null)  {
+		response.sendRedirect("iCare.jsp");
 	}
- 
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -113,29 +108,49 @@
 							Preferred time</div>
 								<select class="textboxtimeReschedule"  >
 									<option>Select time</option>
+									<option>10.00</option>
 									<option>10.30</option>
+									<option>11.00</option>
 									<option>11.30</option>
+									<option>1.00</option>
 									<option>1.30</option>
+									<option>2.00</option>
 									<option>2.30</option>
+									<option>3.00</option>
 									<option>3.30</option>
+									<option>4.00</option>
 									<option>4.30</option>
+									<option>5.00</option>
 									<option>5.30</option>
+									<option>6.00</option>
 									<option>6.30</option>
+									<option>7.00</option>
 									<option>7.30</option>
+									<option>8.00</option>
 									<option>8.30</option>
 								</select>
 								<span >to</span>
 								<select class="textboxtimeReschedule" >
 									<option>Select time</option>
+									<option>10.00</option>
 									<option>10.30</option>
+									<option>11.00</option>
 									<option>11.30</option>
+									<option>1.00</option>
 									<option>1.30</option>
+									<option>2.00</option>
 									<option>2.30</option>
+									<option>3.00</option>
 									<option>3.30</option>
+									<option>4.00</option>
 									<option>4.30</option>
+									<option>5.00</option>
 									<option>5.30</option>
+									<option>6.00</option>
 									<option>6.30</option>
+									<option>7.00</option>
 									<option>7.30</option>
+									<option>8.00</option>
 									<option>8.30</option>
 								</select>
 							<div class="ApptitleReschedule">Speciality</div>

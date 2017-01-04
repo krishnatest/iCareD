@@ -18,8 +18,6 @@ import icare.authentication.data.AuthDb;
 public class UserAuthentication extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private String uName = "test";
-	private String uPwd = "test";
 	public String name1;
 	
 	/**
@@ -76,17 +74,17 @@ public class UserAuthentication extends HttpServlet {
 		} else {
 			//	MySql statement to chk that user exists or not
 			 try {
-				 uNameDb = new AuthDb().validateUserLogin(uName, uPwd);
+				 uNameDb = new AuthDb().validateUserLogin(userName, password);
 				 System.out.println("Data query : " + uNameDb);
 	            } catch (SQLException e) {
 	                e.printStackTrace();
 	            }
 			 
-			 if (uNameDb != "" && captcha == 4) {
+			 if (uNameDb != null && captcha == 4) {
 				// Create a session object if it is already not  created.
 				HttpSession session = request.getSession(true);
-				session.setAttribute("sessUname", uName);
-				session.setAttribute("sessUpwd", uPwd);
+				session.setAttribute("sessUname", uNameDb);
+				//session.setAttribute("sessUpwd", uPwd);
 				
 				//System.out.println(session.getAttribute("sessUname"));
 				//System.out.println(session.getAttribute("sessUpwd"));
